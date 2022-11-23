@@ -1,11 +1,142 @@
 # json-server
-1, Create .json file
+1, Create .json file with object containing array of objects.
+   eg:
+      {
+        "products": [
+          {
+            "id": 1,
+            "title": "Product 1",
+            "category": "electronics",
+            "price": 4000,
+            "description": "This is description about product 1"
+          },
+          {
+            "id": 2,
+            "title": "Product 2",
+            "category": "electronics",
+            "price": 2000,
+            "description": "This is description about product 2"
+          },
+          {
+            "id": 3,
+            "title": "Product 3",
+            "category": "books",
+            "price": 1000,
+            "description": "This is description about product 3"
+          },
+          {
+            "id": 4,
+            "title": "Product 4",
+            "category": "fitness",
+            "price": 3000,
+            "description": "This is description about product 4"
+          },
+          {
+            "id": 5,
+            "title": "Product 5",
+            "category": "fitness",
+            "price": 4000,
+            "description": "This is description about product 5"
+          },
+          {
+            "id": 6,
+            "title": "Product 6",
+            "category": "gardening",
+            "price": 5000,
+            "description": "This is description about product 6"
+          },
+          {
+            "id": 7,
+            "title": "Product 7",
+            "category": "furniture",
+            "price": 6000,
+            "description": "This is description about product 7"
+          },
+          {
+            "id": 8,
+            "title": "Product 8",
+            "category": "furniture",
+            "price": 7000,
+            "description": "This is description about product 8"
+          },
+          {
+            "id": 9,
+            "title": "Product 9",
+            "category": "accessories",
+            "price": 4000,
+            "description": "This is description about product 9"
+          },
+          {
+            "id": 10,
+            "title": "Product 10",
+            "category": "electronics",
+            "price": 3000,
+            "description": "This is description about product 10",
+            "discount": {
+              "type": "shipping"
+            }
+          },
+          {
+            "id": 11,
+            "title": "Product 8",
+            "category": "furniture",
+            "price": 7000,
+            "description": "This is description about product 8"
+          },
+          {
+            "id": 12,
+            "title": "Product 9",
+            "category": "accessories",
+            "price": 4000,
+            "description": "This is description about product 9"
+          },
+          {
+            "id": 13,
+            "title": "Product 13",
+            "category": "accessories",
+            "price": 4000,
+            "description": "This is description about product 9"
+          }
+        ],
+        "reviews": [
+          {
+            "id": 1,
+            "rating": 3,
+            "comment": "Review 1 for product id 1",
+            "productId": 1
+          },
+          {
+            "id": 2,
+            "rating": 4,
+            "comment": "Review 2 for product id 1",
+            "productId": 1
+          },
+          {
+            "id": 3,
+            "rating": 4,
+            "comment": "Review 3 for product id 1",
+            "productId": 1
+          },
+          {
+            "id": 4,
+            "rating": 5,
+            "comment": "Review 1 for product id 2",
+            "productId": 2
+          },
+          {
+            "id": 5,
+            "rating": 3,
+            "comment": "Review 1 for product id 3",
+            "productId": 3
+          }
+        ]
+      }
+
 2, Initiate --> npm init -y
+
 3, Install json-server
     * npm i json-server 
-
-
-
+    
 4, Create script in package.json, to start & monitor json-server 
      "scripts": {
          "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,7 +161,7 @@ Configuration:
     ----------------
         * create routes.json file 
         * Include the route method that you need in object.
-            (note: Custom routes must have specific key to route)
+            (note: Custom routes must have unique path to route)
             {
                 "api/v1/*":"/$1",
                 "/products/:category": "/products?category=:category",
@@ -54,7 +185,7 @@ Configuration:
 7, Sort Ascending & Descending:
 ------------------------------- 
     * In this json we sort the objects based on the 'price' key.
-        Ascending - http://localhost:3000/products?_sort=price 
+        Ascending(default) - http://localhost:3000/products?_sort=price 
         Descending - http://localhost:3000/products?_sort=price&_order=desc 
     
     * second level of sorting based on the second key(category).
